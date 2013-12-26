@@ -6,7 +6,7 @@
 #    By: wbeets <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/09/25 22:18:52 by wbeets            #+#    #+#              #
-#    Updated: 2013/12/26 20:07:25 by wbeets           ###   ########.fr        #
+#    Updated: 2013/12/26 20:38:43 by wbeets           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ SRC = 	ft_memmove.c \
 
 OBJ = $(SRC:.c=.o)
 NAME = libft.a
-
+INC = includes
 all: $(NAME) 
 
 $(NAME): obj
@@ -85,7 +85,7 @@ $(NAME): obj
 	ranlib $(NAME)
 
 obj:
-	gcc -c $(SRC) -Wall -Werror -Wextra
+	gcc -c $(SRC) -I $(INC) -Wall -Werror -Wextra
 
 clean:
 	rm -f $(OBJ)

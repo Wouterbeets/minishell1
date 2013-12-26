@@ -6,7 +6,7 @@
 #    By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/12/04 14:47:38 by wbeets            #+#    #+#              #
-#    Updated: 2013/12/26 20:09:22 by wbeets           ###   ########.fr        #
+#    Updated: 2013/12/26 20:27:05 by wbeets           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ INC = libft/includes
 all:
 	gcc $(FLAGS) $(SRC) -L. $(LIB) -I $(INC) -o $(NAME)
 
-debug:
+gdb:
 	cc -g $(SRC) -L. $(LIB) -I $(INC) -o $(DEB)
 	gdb $(DEB)
 
