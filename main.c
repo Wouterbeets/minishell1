@@ -6,9 +6,14 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 16:00:11 by wbeets            #+#    #+#             */
-/*   Updated: 2013/12/26 21:56:25 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/26 22:14:31 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+
+/*boooonnnnnn oublier pas de droit de acces fichier et reportoir
+ * gestiondes euruer quand executable n existate pas*/
 
 #include "header.h"
 
@@ -21,9 +26,6 @@ int		main(int argc, char **argv, char **env)
 	argc = 0;
 	argv = 0;
 	ex_info.env = env;
-	ft_putstr(env[0]);
-	ft_putstr("\n");
-	ft_putstr(ex_info.env[0]);
 	while (ft_strcmp(input, "exit") != 0)
 	{
 		ft_putstr("$>");
@@ -34,7 +36,7 @@ int		main(int argc, char **argv, char **env)
 	return (0);
 }
 
-int	ft_get_command(t_ex *ex_info, char **input)
+int		ft_get_command(t_ex *ex_info, char **input)
 {
 	int		ret;
 	char	**tab;
@@ -42,7 +44,7 @@ int	ft_get_command(t_ex *ex_info, char **input)
 	ret = get_next_line(0, input);
 	tab = ft_strsplit(*input, ' ');
 	ex_info->name_ex = tab[0];
-	ex_info->argv = tab + 1;
+	ex_info->argv = tab;
 	return (1);
 }
 
@@ -74,9 +76,7 @@ int	ft_execute(t_ex *ex_info)
 	paths = ft_get_paths(ex_info->env);
 	while (paths[++i] != '\0')
 	{
-		ft_putendl(paths[i]);
 		tmp = ft_strjoin(paths[i], ex_info->name_ex);
-		ft_putendl(tmp);
 		execve(tmp, ex_info->argv, ex_info->env);
 		free(tmp);
 	}
@@ -90,9 +90,7 @@ char	**ft_get_paths(char **tab)
 	int		i;
 	int		j;
 
-	ft_putstr(tab[0]);
 	tmp = ft_strsplit(tab[0] + 5 , ':');
-	ft_putstr(tmp[0]);
 	i = ft_count_c(tab[0], ':') + 1;
 	paths = (char**)malloc(i * sizeof(*paths));
 	paths[i] = '\0';
@@ -101,12 +99,8 @@ char	**ft_get_paths(char **tab)
 	{
 		paths[j] = ft_strjoin(tmp[j], "/");
 		free(tmp[j]);
-		ft_putnbr(j);
-		ft_putstr("\n");
-		ft_putendl(paths[j]);
 		j++;
 	}
-	ft_putendl("exit while");
 	free(tmp);
 	return (paths);
 }
