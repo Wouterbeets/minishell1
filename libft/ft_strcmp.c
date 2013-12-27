@@ -6,7 +6,7 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 12:34:01 by wbeets            #+#    #+#             */
-/*   Updated: 2013/11/25 10:20:11 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/27 11:49:58 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_strcmp(const char *s1, const char *s2)
 			i++;
 		}
 		if (s1[i] != s2[i])
-			return (s1[i] -s2[i]);
+			return (s1[i] - s2[i]);
 	}
 	return (s1[i] - s2[i]);
 }

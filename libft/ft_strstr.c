@@ -6,7 +6,7 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 20:52:40 by wbeets            #+#    #+#             */
-/*   Updated: 2013/11/21 15:58:16 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/27 11:50:47 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 			j++;
 			i++;
 			if (s2[j] == '\0')
-				return (char*)&(s1[i-ft_strlen(s2)]);
+				return (char*)&(s1[i - ft_strlen(s2)]);
 		}
 		j = 0;
 		i++;

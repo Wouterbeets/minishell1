@@ -6,7 +6,7 @@
 /*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 16:00:11 by wbeets            #+#    #+#             */
-/*   Updated: 2013/12/26 22:14:31 by wbeets           ###   ########.fr       */
+/*   Updated: 2013/12/27 11:43:55 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		ft_ex_command(t_ex *ex_info)
 	if (pid == 0)
 	{
 		ft_execute(ex_info);
+		ft_putstr("file is not an executable\n");
 		exit (0);
 	}
 	if (pid > 0)
